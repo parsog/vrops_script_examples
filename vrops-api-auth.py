@@ -6,6 +6,8 @@ urllib3.disable_warnings()
 
 vrops_fqdn = "vrops80-weekly.cmbu.local"
 api_url_base = "https://" + vrops_fqdn + "/suite-api"
+vrops_user = "admin"
+vrops_password = "VMware1!"
 
 
 def get_token(user_name, pass_word):
@@ -54,7 +56,7 @@ def create_notification_template(data):
 ##### MAIN #####
 
 token_header = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-access_key = get_token("admin", "VMware1!")
+access_key = get_token(vrops_user, vrops_password)
 
 api_header = {'Content-Type': 'application/json',
             'Accept': 'application/json',
